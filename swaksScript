@@ -1,0 +1,6 @@
+#!/bin/bash
+input="/path/to/file/big-list-of-naughty-strings.txt"
+while IFS= read -r line
+do
+  command swaks -s IP_ADRESS -t USER@DOMAIN.COM -f test@mail.com --header "Subject: $line" --body "This is a test mail"
+done < "$input"
